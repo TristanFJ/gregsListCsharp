@@ -14,13 +14,16 @@ namespace gregsListCsharp.Models
 
     public int Price { get; set; }
 
-    public Car(int year, string? model, string? make, int price)
+    public bool Pending { get; set; }
+
+    public Car(int year, string? model, string? make, int price, bool pending)
     {
       Id = Guid.NewGuid().ToString();
       Year = year;
       Model = model;
       Make = make;
       Price = price;
+      Pending = pending;
     }
   }
 }

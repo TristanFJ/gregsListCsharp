@@ -33,6 +33,7 @@ namespace gregsListCsharp.Services
       oldCar.Model = updatedCar.Model != null ? updatedCar.Model : oldCar.Model;
       oldCar.Make = updatedCar.Make != null ? updatedCar.Make : oldCar.Make;
       oldCar.Price = updatedCar.Price != 0 ? updatedCar.Price : oldCar.Price;
+      oldCar.Pending = updatedCar.Pending != false ? updatedCar.Pending : oldCar.Pending;
 
       return oldCar;
     }

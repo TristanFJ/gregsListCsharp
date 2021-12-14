@@ -74,6 +74,25 @@ namespace gregsListCsharp.Controllers
       }
     }
 
+    [HttpDelete("{id}/pending")]
+    // REVIEW why Create here? banana word??
+    public ActionResult<Car> Create([FromBody] Car updatedCar, string id, bool pending)
+    {
+      try
+      {
+        updatedCar.Id = id;
+        updatedCar.Pending = !updatedCar.Pending;
+        Car car = _cs.Update(updatedCar);
+        return Ok(car);
+      }
+      catch (Exception e)
+      {
+        return BadRequest(e.Message);
+      }
+    }
+
+
+
     [HttpDelete("{id}")]
     public ActionResult<String> Remove(string id)
     {
